@@ -20,6 +20,7 @@
 		9B3088A51EB8F7F1003BE397 /* ImgurAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3088A41EB8F7F1003BE397 /* ImgurAPI.m */; };
 		9B3088B11EB921BE003BE397 /* NetworkWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3088B01EB921BE003BE397 /* NetworkWrapper.m */; };
 		9B3088B81EB93549003BE397 /* APIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3088B71EB93549003BE397 /* APIWrapper.m */; };
+		9B3088DB1EBA1F8C003BE397 /* ImageSourcesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3088DA1EBA1F8C003BE397 /* ImageSourcesModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,9 @@
 		9B3088B01EB921BE003BE397 /* NetworkWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NetworkWrapper.m; path = API/Oauth/NetworkWrapper.m; sourceTree = "<group>"; };
 		9B3088B61EB93549003BE397 /* APIWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIWrapper.h; path = API/APIWrapper/APIWrapper.h; sourceTree = "<group>"; };
 		9B3088B71EB93549003BE397 /* APIWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIWrapper.m; path = API/APIWrapper/APIWrapper.m; sourceTree = "<group>"; };
+		9B3088BF1EBA1C02003BE397 /* ImageViewer 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ImageViewer 2.xcdatamodel"; sourceTree = "<group>"; };
+		9B3088D91EBA1F8C003BE397 /* ImageSourcesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageSourcesModel.h; path = Model/ImageSources/ImageSourcesModel.h; sourceTree = "<group>"; };
+		9B3088DA1EBA1F8C003BE397 /* ImageSourcesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageSourcesModel.m; path = Model/ImageSources/ImageSourcesModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +166,7 @@
 		9B30889A1EB8EE2C003BE397 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B3088D81EBA1F54003BE397 /* ImageSources */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -201,6 +206,15 @@
 				9B3088B71EB93549003BE397 /* APIWrapper.m */,
 			);
 			name = APIWrapper;
+			sourceTree = "<group>";
+		};
+		9B3088D81EBA1F54003BE397 /* ImageSources */ = {
+			isa = PBXGroup;
+			children = (
+				9B3088D91EBA1F8C003BE397 /* ImageSourcesModel.h */,
+				9B3088DA1EBA1F8C003BE397 /* ImageSourcesModel.m */,
+			);
+			name = ImageSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,6 +360,7 @@
 				9B3088B11EB921BE003BE397 /* NetworkWrapper.m in Sources */,
 				9B3088A51EB8F7F1003BE397 /* ImgurAPI.m in Sources */,
 				9B3088691EB8ECC1003BE397 /* ImageViewer.xcdatamodeld in Sources */,
+				9B3088DB1EBA1F8C003BE397 /* ImageSourcesModel.m in Sources */,
 				9B3088631EB8ECC1003BE397 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -588,6 +603,7 @@
 				9B3088931EB8ECC1003BE397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B3088941EB8ECC1003BE397 /* Build configuration list for PBXNativeTarget "ImageViewerTests" */ = {
 			isa = XCConfigurationList;
@@ -596,6 +612,7 @@
 				9B3088961EB8ECC1003BE397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B3088971EB8ECC1003BE397 /* Build configuration list for PBXNativeTarget "ImageViewerUITests" */ = {
 			isa = XCConfigurationList;
@@ -604,6 +621,7 @@
 				9B3088991EB8ECC1003BE397 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
@@ -611,6 +629,7 @@
 		9B3088671EB8ECC1003BE397 /* ImageViewer.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9B3088BF1EBA1C02003BE397 /* ImageViewer 2.xcdatamodel */,
 				9B3088681EB8ECC1003BE397 /* ImageViewer.xcdatamodel */,
 			);
 			currentVersion = 9B3088681EB8ECC1003BE397 /* ImageViewer.xcdatamodel */;

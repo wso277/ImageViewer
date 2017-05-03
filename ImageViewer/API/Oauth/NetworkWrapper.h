@@ -17,6 +17,8 @@
 @property (strong, nonatomic) ImgurAPI *imgur;
 @property (strong, nonatomic) id<APIProtocol> wrapper;
 
+@property (strong, nonatomic) SFSafariViewController *webview;
+
 +(instancetype)sharedInstanceWithSchema:(SchemaType) schema;
 
 -(void)presentOauthControllerInViewController:(UIViewController *)viewController;

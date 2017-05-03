@@ -59,12 +59,45 @@
     [self saveContext];
 }
 
+- (NSString *)valueForKey:(NSString *)key
+           fromQueryItems:(NSArray *)queryItems
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name=%@", key];
+    NSURLQueryItem *queryItem = [[queryItems
+                                  filteredArrayUsingPredicate:predicate]
+                                 firstObject];
+    return queryItem.value;
+}
+
 -(BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options
 {
     NSLog(@"openURL");
     NSLog(@"%@", url);
     
-    return YES;
+    NSMutableDictionary *queryStringDictionary = [[NSMutableDictionary alloc] init];
+    NSArray *urlComponents = [[url absoluteString] componentsSeparatedByString:@"&"];
+    
+    for (NSString *keyValuePair in urlComponents)
+    {
+        NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
+        NSString *key = [[pairComponents firstObject] stringByRemovingPercentEncoding];
+        NSString *value = [[pairComponents lastObject] stringByRemovingPercentEncoding];
+        
+        [queryStringDictionary setObject:value forKey:key];
+    }
+    
+    if ([[url absoluteString] containsString:IMGUR_STATE]) {
+        //imgur url
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:ADD_ACCOUNT_NOTIFICATION object:self];
+        
+        [queryStringDictionary setObject:[queryStringDictionary objectForKey:@"imageviewer://oauth?state"] forKey:@"access_token"];
+        
+        return YES;
+    }
+    
+    
+    return NO;
 }
 
 

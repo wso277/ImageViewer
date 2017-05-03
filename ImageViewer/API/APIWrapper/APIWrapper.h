@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#define IMGUR_STATE @"IMGUR_IMAGEVIEWER_LOGIN"
+
+#define ADD_ACCOUNT_NOTIFICATION @"url_callback_received"
+
 typedef NS_ENUM(NSInteger, SchemaType) {
     IMGUR_SCHEMA
 };

@@ -42,11 +42,25 @@
 {
     NSURL *url = [self.wrapper getOauthURL];
     
-    SFSafariViewController *safari = [[SFSafariViewController alloc] initWithURL:url];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dismissSafari) name:ADD_ACCOUNT_NOTIFICATION object:nil];
     
-    [viewController presentViewController:safari animated:YES completion:nil];
+    self.webview = [[SFSafariViewController alloc] initWithURL:url];
+    
+    [viewController presentViewController:self.webview animated:YES completion:nil];
+}
+
+//NOTIFICATION
+
+-(void)dismissSafari
+{
+    [self.webview dismissViewControllerAnimated:YES completion:nil];
 }
 
 //DELEGATE
+
+-(void)safariViewControllerDidFinish:(SFSafariViewController *)controller
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:ADD_ACCOUNT_NOTIFICATION object:nil];
+}
 
 @end

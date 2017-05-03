@@ -12,12 +12,12 @@
 
 -(NSString*)getOauthString
 {
-    return [IMGUR_URL stringByAppendingString:@"/oauth2/authorize?client_id=CLIENT_ID&response_type=token&state=IMGVIEWER_LOGIN"];
+    return [IMGUR_URL stringByAppendingString:@"/oauth2/authorize?client_id=CLIENT_ID&response_type=token&state=APP_STATE"];
 }
 
 -(NSURL *)getOauthURL
 {
-    NSString *urlStr = [[self getOauthString] stringByReplacingOccurrencesOfString:@"CLIENT_ID" withString:IMGUR_CLIENT_ID];
+    NSString *urlStr = [[[self getOauthString] stringByReplacingOccurrencesOfString:@"CLIENT_ID" withString:IMGUR_CLIENT_ID] stringByReplacingOccurrencesOfString:@"APP_STATE" withString:IMGUR_STATE];
     
     return [NSURL URLWithString:urlStr];
 }
