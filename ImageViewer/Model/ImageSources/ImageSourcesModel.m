@@ -24,7 +24,23 @@
         [src setAccount_username:[params objectForKey:@"account_username"]];
         
         [[ModelManager sharedInstance] saveAndWait];
+    
     }];
+}
+
++(void)getAllImageSrc
+{
+    NSManagedObjectContext *context = [[ModelManager sharedInstance] getMainContext];
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"ImageSources"];
+    
+    NSError *error = nil;
+    NSArray *results = [context executeFetchRequest:request error:&error];
+    if (!results) {
+        NSLog(@"Error fetching Employee objects: %@\n%@", [error localizedDescription], [error userInfo]);
+        abort();
+    }
+
 }
 
 @end

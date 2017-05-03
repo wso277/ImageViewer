@@ -18,6 +18,7 @@
 +(instancetype)sharedInstance;
 
 -(NSManagedObjectContext*)getWriterContext;
+-(NSManagedObjectContext*)getMainContext;
 -(void)saveAndWait;
 
 @end

@@ -26,6 +26,11 @@
     return sharedInstance;
 }
 
+-(NSManagedObjectContext*)getMainContext
+{
+    return self.mainContext;
+}
+
 -(NSManagedObjectContext*)getWriterContext
 {
     if (self.writerContext) {
@@ -33,7 +38,8 @@
     }
     
     self.writerContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSPrivateQueueConcurrencyType];
-    self.writerContext.parentContext = self.mainContext;
+//    self.writerContext.parentContext = self.mainContext;
+    self.writerContext.persistentStoreCoordinator = self.mainContext.persistentStoreCoordinator;
     
     return self.writerContext;
 }

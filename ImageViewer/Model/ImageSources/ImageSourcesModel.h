@@ -14,4 +14,6 @@
 
 +(void)saveImageSrcForImgur:(NSDictionary*)params;
 
++(void)getAllImageSrc;
+
 @end
