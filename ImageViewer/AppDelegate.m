@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "DetailViewController.h"
 #import "MasterViewController.h"
+#import "ModelManager.h"
+#import "ImageSourcesModel.h"
 
 @interface AppDelegate () <UISplitViewControllerDelegate>
 
@@ -27,6 +29,9 @@
     UINavigationController *masterNavigationController = splitViewController.viewControllers[0];
     MasterViewController *controller = (MasterViewController *)masterNavigationController.topViewController;
     controller.managedObjectContext = self.persistentContainer.viewContext;
+    
+    [ModelManager sharedInstanceWithContext:self.persistentContainer.viewContext];
+    
     return YES;
 }
 
@@ -92,6 +97,8 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:ADD_ACCOUNT_NOTIFICATION object:self];
         
         [queryStringDictionary setObject:[queryStringDictionary objectForKey:@"imageviewer://oauth?state"] forKey:@"access_token"];
+        
+        [ImageSourcesModel saveImageSrcForImgur:queryStringDictionary];
         
         return YES;
     }

@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ImageViewer+CoreDataModel.h"
+#import "ModelManager.h"
 
 @interface ImageSourcesModel : NSObject
+
++(void)saveImageSrcForImgur:(NSDictionary*)params;
 
 @end

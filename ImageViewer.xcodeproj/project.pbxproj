@@ -21,6 +21,7 @@
 		9B3088B11EB921BE003BE397 /* NetworkWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3088B01EB921BE003BE397 /* NetworkWrapper.m */; };
 		9B3088B81EB93549003BE397 /* APIWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3088B71EB93549003BE397 /* APIWrapper.m */; };
 		9B3088DB1EBA1F8C003BE397 /* ImageSourcesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3088DA1EBA1F8C003BE397 /* ImageSourcesModel.m */; };
+		9B3088E11EBA3446003BE397 /* ModelManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3088E01EBA3446003BE397 /* ModelManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,8 @@
 		9B3088BF1EBA1C02003BE397 /* ImageViewer 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ImageViewer 2.xcdatamodel"; sourceTree = "<group>"; };
 		9B3088D91EBA1F8C003BE397 /* ImageSourcesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ImageSourcesModel.h; path = Model/ImageSources/ImageSourcesModel.h; sourceTree = "<group>"; };
 		9B3088DA1EBA1F8C003BE397 /* ImageSourcesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ImageSourcesModel.m; path = Model/ImageSources/ImageSourcesModel.m; sourceTree = "<group>"; };
+		9B3088DF1EBA3446003BE397 /* ModelManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ModelManager.h; path = Model/ModelManager/ModelManager.h; sourceTree = "<group>"; };
+		9B3088E01EBA3446003BE397 /* ModelManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ModelManager.m; path = Model/ModelManager/ModelManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +169,7 @@
 		9B30889A1EB8EE2C003BE397 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9B3088DE1EBA341A003BE397 /* Manager */,
 				9B3088D81EBA1F54003BE397 /* ImageSources */,
 			);
 			name = Model;
@@ -215,6 +219,15 @@
 				9B3088DA1EBA1F8C003BE397 /* ImageSourcesModel.m */,
 			);
 			name = ImageSources;
+			sourceTree = "<group>";
+		};
+		9B3088DE1EBA341A003BE397 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				9B3088DF1EBA3446003BE397 /* ModelManager.h */,
+				9B3088E01EBA3446003BE397 /* ModelManager.m */,
+			);
+			name = Manager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -356,6 +369,7 @@
 				9B30886F1EB8ECC1003BE397 /* DetailViewController.m in Sources */,
 				9B30886C1EB8ECC1003BE397 /* MasterViewController.m in Sources */,
 				9B3088B81EB93549003BE397 /* APIWrapper.m in Sources */,
+				9B3088E11EBA3446003BE397 /* ModelManager.m in Sources */,
 				9B3088661EB8ECC1003BE397 /* AppDelegate.m in Sources */,
 				9B3088B11EB921BE003BE397 /* NetworkWrapper.m in Sources */,
 				9B3088A51EB8F7F1003BE397 /* ImgurAPI.m in Sources */,
